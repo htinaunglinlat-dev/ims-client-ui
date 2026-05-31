@@ -2,9 +2,11 @@ import { Bell, Mouse } from "lucide-react";
 
 type ProjectDetailHeroProps = {
   title: string;
+  tagline: string;
+  meta: string;
 };
 
-export function ProjectDetailHero({ title }: ProjectDetailHeroProps) {
+export function ProjectDetailHero({ title, tagline, meta }: ProjectDetailHeroProps) {
   return (
     <section className="relative flex min-h-[760px] items-center justify-center overflow-hidden bg-linear-to-br from-blue-500 via-sky-500 to-cyan-700 px-4 py-24 text-center">
       <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,.35)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.35)_1px,transparent_1px)] [background-size:30px_30px]" />
@@ -14,7 +16,7 @@ export function ProjectDetailHero({ title }: ProjectDetailHeroProps) {
         <div className="mb-14 flex items-center justify-center gap-6 text-xs font-bold text-white md:text-sm">
           <span className="inline-flex items-center gap-2">
             <Bell className="h-4 w-4 fill-white" />
-            iOS & Android
+            {meta}
           </span>
           <span>&middot;</span>
           <span>January 2025</span>
@@ -24,7 +26,7 @@ export function ProjectDetailHero({ title }: ProjectDetailHeroProps) {
           {title}
         </h1>
         <p className="mx-auto mt-8 max-w-3xl text-lg font-light text-white/90 md:text-2xl">
-          Let&apos;s create a space for your connection.
+          {tagline}
         </p>
 
         <Mouse className="mx-auto mt-14 h-10 w-10 animate-bounce text-white" />

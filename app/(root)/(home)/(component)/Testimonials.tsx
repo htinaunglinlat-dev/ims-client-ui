@@ -1,11 +1,11 @@
 "use client";
-import { testimonials } from "@/lib/data/site-data";
+import { testimonials } from "@/lib/data/testimonial-data";
 
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import { TestimonialCard } from "@/components/Card/TestimonialCard";
 
-const infiniteTestimonials = [...testimonials, ...testimonials];
+const infiniteTestimonials = Array.from({ length: 4 }, () => testimonials).flat();
 
 export function Testimonials() {
   const [emblaRef] = useEmblaCarousel(
@@ -19,8 +19,10 @@ export function Testimonials() {
     [
       AutoScroll({
         speed: 0.8,
+        playOnInit: true,
         stopOnInteraction: false,
         stopOnMouseEnter: true,
+        stopOnFocusIn: false,
         startDelay: 0,
       }),
     ],

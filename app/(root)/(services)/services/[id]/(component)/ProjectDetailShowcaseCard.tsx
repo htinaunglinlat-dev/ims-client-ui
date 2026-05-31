@@ -1,85 +1,56 @@
 import Image from "next/image";
-import Link from "next/link";
-import {
-  ArrowUpRight,
-  Shield,
-  Database,
-  Truck,
-  Package,
-  Home,
-  Users,
-  Layers,
-  Scale,
-  Smartphone,
-} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { type ProjectDetailCardLayout } from "@/lib/data/project-detail-data";
+import { cn } from "@/lib/utils";
 
 export type ProjectDetailShowcaseItem = {
   eyebrow: string;
   title: string;
   description: string;
   image: string;
+  icon: LucideIcon;
   features: string[];
 };
 
 type ProjectDetailShowcaseCardProps = {
   item: ProjectDetailShowcaseItem;
-};
-
-const getIcon = (num: string) => {
-  switch (num) {
-    case "01":
-      return Shield;
-    case "02":
-      return Database;
-    case "03":
-      return Truck;
-    case "04":
-      return Package;
-    case "05":
-      return Home;
-    case "06":
-      return Users;
-    case "07":
-      return Layers;
-    case "08":
-      return Scale;
-    default:
-      return Smartphone;
-  }
+  index: number;
+  total: number;
+  layout?: ProjectDetailCardLayout;
 };
 
 export function ProjectDetailShowcaseCard({
   item,
+  index,
+  total,
+  layout = "desktop",
 }: ProjectDetailShowcaseCardProps) {
-  // Parse eyebrow string (e.g. "01 - Authentication" -> num = "01", name = "Authentication")
-  const parts = item.eyebrow.split(" - ");
-  const num = parts[0] || "01";
-  const name = parts[1] || item.eyebrow;
-  const stepText = `${num} / 08`;
-  const Icon = getIcon(num);
+  const num = String(index + 1).padStart(2, "0");
+  const name = item.eyebrow;
+  const stepText = `${num} / ${String(total).padStart(2, "0")}`;
+  const Icon = item.icon;
+  const isDesktopLayout = layout === "desktop";
 
   return (
-    <Card className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-linear-to-tr from-[#2e1065] via-[#1e1b4b] to-[#831843] p-8 sm:p-12 lg:p-16 lg:min-h-[580px] flex flex-col lg:flex-row justify-between gap-12 shadow-2xl">
-      {/* Dynamic background watermark matching the mockup screen, blurred slightly for depth */}
-      {/* <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-        <Image
-          src={item.image}
-          alt=""
-          fill
-          // className="object-cover opacity-[0.25] blur-[6px] scale-110 select-none mix-blend-overlay"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-slate-950/20" />
-      </div> */}
-
+    <Card
+      className={cn(
+        "relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-linear-to-tr from-[#2e1065] via-[#1e1b4b] to-[#831843] p-8 sm:p-12 lg:p-16 lg:min-h-[580px] flex flex-col justify-between gap-12 shadow-2xl ",
+        isDesktopLayout ? "lg:flex-row" : "md:flex-row",
+      )}
+    >
       {/* Decorative overlapping vector rings in the background */}
       <div className="absolute -left-16 -top-16 w-96 h-96 rounded-full border-30 border-white/2 pointer-events-none" />
       <div className="absolute left-20 top-20 w-80 h-80 rounded-full border-15px border-white/2 pointer-events-none" />
 
       {/* Left Side Content - Floating Glass Typography */}
-      <div className="w-full lg:w-1/4 space-y-6 z-10 text-left">
+      <div
+        className={cn(
+          "w-full space-y-6 z-10 text-left",
+          isDesktopLayout ? "lg:w-1/4" : "md:w-1/2",
+        )}
+      >
         {/* Step / Category Badge */}
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full border border-white/20 bg-white/10 backdrop-blur-md flex items-center justify-center text-white">
@@ -124,7 +95,11 @@ export function ProjectDetailShowcaseCard({
       </div>
 
       {/* Right Side - Floating Glass Card Container */}
-      <div className="relative w-full lg:w-3/4 h-[400px] lg:h-[500px] rounded-3xl border border-white/20 bg-white/5 shadow-2xl backdrop-blur-xl overflow-hidden flex flex-col justify-between z-10">
+      <div
+        className={`relative w-full h-[400px] lg:h-[500px] rounded-3xl border border-white/20 bg-white/5 shadow-2xl backdrop-blur-xl overflow-hidden flex flex-col justify-between z-10 ${
+          isDesktopLayout ? "lg:w-3/4" : "md:w-1/2"
+        }`}
+      >
         {/* Step Indicator Ornament */}
         <div className="absolute top-4 right-4 w-7 h-7 rounded-full border border-white/20 bg-white/10 backdrop-blur-md flex items-center justify-center text-[10px] font-bold text-white z-20">
           {num}
@@ -139,7 +114,7 @@ export function ProjectDetailShowcaseCard({
               fill
               priority
               unoptimized
-              className="object-cover object-top-left"
+              className="object-contain"
             />
           </div>
         </div>

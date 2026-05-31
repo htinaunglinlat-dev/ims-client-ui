@@ -1,11 +1,14 @@
-const stats = [
-  { value: "50+", label: "Screens Designed" },
-  { value: "5", label: "Main Features" },
-  { value: "100%", label: "Mobile Optimized" },
-  { value: "3", label: "Design Iterations" },
-];
+type ProjectDetailOverviewProps = {
+  title: string;
+  description: string;
+  stats: { value: string; label: string }[];
+};
 
-export function ProjectDetailOverview() {
+export function ProjectDetailOverview({
+  title,
+  description,
+  stats,
+}: ProjectDetailOverviewProps) {
   return (
     <section className="border-b border-border bg-background px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[1fr_0.95fr] lg:items-center">
@@ -14,13 +17,10 @@ export function ProjectDetailOverview() {
             Overview
           </p>
           <h2 className="max-w-2xl text-3xl font-extrabold leading-tight tracking-tight text-foreground md:text-5xl">
-            Reimagining inventory control
+            {title}
           </h2>
           <p className="mt-7 max-w-2xl text-base leading-8 text-muted-foreground md:text-lg">
-            I designed a comprehensive inventory management system that empowers
-            businesses to track stock levels, manage shipments, communicate with
-            team members, and receive real-time notifications all in one
-            intuitive mobile application.
+            {description}
           </p>
         </div>
 
