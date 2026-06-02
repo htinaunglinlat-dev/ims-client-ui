@@ -9,6 +9,17 @@ import {
   Layers,
   Scale,
   Smartphone,
+  ShoppingCart,
+  Receipt,
+  BarChart3,
+  Tags,
+  Activity,
+  Bluetooth,
+  Wifi,
+  QrCode,
+  Lightbulb,
+  CheckCircle2,
+  Cpu,
 } from "lucide-react";
 
 type ProjectOverviewStat = {
@@ -228,23 +239,201 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
   },
   {
     id: "iot",
-    title: "IoT Application",
-    heroTagline: "Cloud-connected monitoring and control for smart devices.",
-    heroMeta: "IoT Platform",
-    overviewTitle: "Operational IoT visibility",
-    thumbnail: "/projects/ims/thumbnail.png",
+    title: "Smart IoT Device App",
+    heroTagline:
+      "QR onboarding, device pairing, and smart room control in one mobile app.",
+    heroMeta: "Mobile App",
+    overviewTitle: "Connecting smart devices with less setup friction",
+    thumbnail: "/projects/iot/thumbnail.png",
     overviewDescription:
-      "ဤ project သည် connected-device operations နှင့် remote observability workflow များကို အဓိကဖော်ပြထားပါသည်။ အသေးစိတ် screenshot များကို public asset folder တွင် မကြာမီ ထည့်သွင်းပေးသွားမည်ဖြစ်ပါသည်။",
+      "IoT app သည် smart device များကို QR code ဖြင့် လျင်မြန်စွာ ထည့်သွင်းနိုင်ရန်၊ Bluetooth နှင့် WiFi setup များကို အဆင့်လိုက် ပြုလုပ်နိုင်ရန်၊ room/device dashboard မှ energy usage နှင့် device status များကို mobile-first experience ဖြင့် စီမံနိုင်ရန် ဖန်တီးထားပါသည်။",
     overviewStats: [
-      { value: "MQTT", label: "Protocol Support" },
-      { value: "24/7", label: "Telemetry Flow" },
-      { value: "Cloud", label: "Central Monitoring" },
-      { value: "OTA", label: "Device Updates" },
+      { value: "9", label: "Captured Screens" },
+      { value: "3", label: "Pairing Steps" },
+      { value: "BLE", label: "Device Setup" },
+      { value: "WiFi", label: "Network Control" },
     ],
-    showcaseTitle: "IoT Application",
+    layout: "mobile",
+    showcaseTitle: "Smart IoT Device App",
     showcaseDescription:
-      "ဤ project အတွက် screen asset များကို လက်ရှိတွင် ပြင်ဆင်နေဆဲ ဖြစ်ပါသည်။",
-    showcaseItems: [],
+      "iot project asset folder မှ onboarding, pairing journey, dashboard နှင့် device control screen များကို စုစည်းတင်ပြထားပါသည်။",
+    showcaseItems: [
+      {
+        eyebrow: "Onboarding",
+        title: "QR Device Onboarding",
+        image: "/projects/iot/home.png",
+        icon: QrCode,
+        description:
+          "Device အသစ်များကို one-time QR code ဖြင့် လျင်မြန်စွာ ထည့်သွင်းနိုင်ရန် app entry screen ကို ရိုးရှင်းပြီး action-focused ဖြစ်အောင် ဖန်တီးထားပါသည်။",
+        features: ["One-time QR code", "Fast device add", "Secure setup"],
+      },
+      {
+        eyebrow: "Register",
+        title: "Account Registration",
+        image: "/projects/iot/register.png",
+        icon: Users,
+        description:
+          "Smart home device များကို ကိုယ်ပိုင် account ဖြင့် စီမံနိုင်ရန် email/password registration နှင့် Google sign-in option ပါဝင်သော onboarding screen ဖြစ်ပါသည်။",
+        features: ["Email sign up", "Password confirmation", "Google access"],
+      },
+      {
+        eyebrow: "Verification",
+        title: "OTP Verification",
+        image: "/projects/iot/otp.png",
+        icon: Shield,
+        description:
+          "Account activation ကို လုံခြုံစေရန် OTP code အတည်ပြုခြင်း၊ resend action နှင့် verify flow ကို mobile screen အတွင်း ထည့်သွင်းထားပါသည်။",
+        features: ["OTP input", "Resend code", "Verified access"],
+      },
+      {
+        eyebrow: "Dashboard",
+        title: "Smart Room Dashboard",
+        image: "/projects/iot/dashboard.png",
+        icon: Activity,
+        description:
+          "Energy usage summary, room category filter နှင့် smart space cards များကို dashboard တစ်ခုတည်းတွင် မြင်သာစွာ စီမံနိုင်ရန် တည်ဆောက်ထားပါသည်။",
+        features: ["Energy summary", "Room filtering", "Create room action"],
+      },
+      {
+        eyebrow: "Devices",
+        title: "Device Discovery",
+        image: "/projects/iot/device.png",
+        icon: Cpu,
+        description:
+          "Bluetooth/WiFi mode ဖြင့် device များကို scan လုပ်ပြီး connection status နှင့် control action များကို list view ထဲတွင် တစ်ပြိုင်နက် စစ်ဆေးနိုင်ပါသည်။",
+        features: ["Mode switching", "Device scanning", "Connection status"],
+      },
+      {
+        eyebrow: "Pairing",
+        title: "Bluetooth Connection",
+        image: "/projects/iot/user-journey-bluetooth.png",
+        icon: Bluetooth,
+        description:
+          "IoT device နှင့် app ကြား local setup စတင်နိုင်ရန် Bluetooth connection အဆင့်ကို device context နှင့် progress indicator ပါဝင်အောင် ဖန်တီးထားပါသည်။",
+        features: ["Bluetooth pairing", "Step indicator", "Offline setup"],
+      },
+      {
+        eyebrow: "Network",
+        title: "WiFi Configuration",
+        image: "/projects/iot/user-journey-wifi.png",
+        icon: Wifi,
+        description:
+          "Device ကို network ချိတ်ဆက်ရန် SSID နှင့် password ထည့်သွင်းပြီး WiFi setup progress ကို အဆင့်လိုက် ဆက်လက်လုပ်ဆောင်နိုင်ပါသည်။",
+        features: ["SSID setup", "Password entry", "Network provisioning"],
+      },
+      {
+        eyebrow: "Control",
+        title: "Device Control Panel",
+        image: "/projects/iot/device-detail.png",
+        icon: Lightbulb,
+        description:
+          "Connected device များကို on/off control ပြုလုပ်နိုင်ပြီး temperature, humidity နှင့် smart appliance status များကို control panel မှ စောင့်ကြည့်နိုင်ပါသည်။",
+        features: ["Light controls", "Sensor cards", "Live device status"],
+      },
+      {
+        eyebrow: "Complete",
+        title: "Scanned Device Summary",
+        image: "/projects/iot/user-journey-complete.png",
+        icon: CheckCircle2,
+        description:
+          "Bluetooth နှင့် WiFi setup ပြီးဆုံးပြီးနောက် detected device များကို summary view ဖြင့် ပြသကာ complete action မှတစ်ဆင့် control flow သို့ ပြန်လည်ဝင်နိုင်ပါသည်။",
+        features: ["Setup complete", "Scanned devices", "Ready to control"],
+      },
+    ],
+  },
+  {
+    id: "pos",
+    title: "Point of Sale System",
+    heroTagline: "Retail sales, checkout, inventory, and reporting in one dashboard.",
+    heroMeta: "Web Dashboard",
+    overviewTitle: "Complete retail operations control",
+    thumbnail: "/projects/pos/thumbnail.png",
+    overviewDescription:
+      "POS system သည် ဆိုင်ရောင်းချမှုများ၊ checkout process, product catalog, customer/supplier records, category setup နှင့် sales report များကို dashboard တစ်ခုတည်းအတွင်း စီမံနိုင်ရန် ဖန်တီးထားသော retail operation system ဖြစ်ပါသည်။",
+    overviewStats: [
+      { value: "8", label: "Captured Screens" },
+      { value: "6", label: "Retail Modules" },
+      { value: "POS", label: "Checkout Flow" },
+      { value: "1", label: "Unified Dashboard" },
+    ],
+    showcaseTitle: "Point of Sale System",
+    showcaseDescription:
+      "POS project asset folder မှ ရောင်းချမှု၊ checkout, catalog နှင့် reporting screen များကို စုစည်းတင်ပြထားပါသည်။",
+    layout: "desktop",
+    showcaseItems: [
+      {
+        eyebrow: "Sales",
+        title: "Sales Dashboard",
+        image: "/projects/pos/sale.png",
+        icon: ShoppingCart,
+        description:
+          "နေ့စဉ်ရောင်းချမှုများကို မြင်သာစွာ စစ်ဆေးနိုင်ပြီး item selection, cart summary နှင့် payment workflow များကို တစ်နေရာတည်းတွင် စီမံနိုင်သော sales screen ဖြစ်ပါသည်။",
+        features: ["Live cart", "Product selection", "Payment-ready flow"],
+      },
+      {
+        eyebrow: "Checkout",
+        title: "Checkout Experience",
+        image: "/projects/pos/checkout.png",
+        icon: Receipt,
+        description:
+          "Customer order ကို အတည်ပြုခြင်း၊ subtotal/discount/tax တွက်ချက်ခြင်းနှင့် final payment အဆင့်ကို လျင်မြန်စွာ ဆောင်ရွက်နိုင်ရန် checkout interface ကို ဖန်တီးထားပါသည်။",
+        features: ["Order summary", "Price calculation", "Fast payment"],
+      },
+      {
+        eyebrow: "Products",
+        title: "Product Management",
+        image: "/projects/pos/product.png",
+        icon: Package,
+        description:
+          "ရောင်းချမည့် product များ၏ name, price, category နှင့် stock-related information များကို စနစ်တကျ ထည့်သွင်းပြင်ဆင်နိုင်သော product catalog screen ဖြစ်ပါသည်။",
+        features: ["Product records", "Price control", "Catalog updates"],
+      },
+      {
+        eyebrow: "Customers",
+        title: "Customer Records",
+        image: "/projects/pos/customer.png",
+        icon: Users,
+        description:
+          "ဝယ်ယူသူအချက်အလက်များကို သိမ်းဆည်းပြီး sale history နှင့် customer relationship workflow များအတွက် ပြန်လည်အသုံးပြုနိုင်ရန် customer management ကို ထည့်သွင်းထားပါသည်။",
+        features: ["Customer list", "Contact details", "Purchase context"],
+      },
+      {
+        eyebrow: "Suppliers",
+        title: "Supplier Directory",
+        image: "/projects/pos/supplier.png",
+        icon: Truck,
+        description:
+          "ကုန်ပစ္စည်းပေးသွင်းသူများ၏ contact information နှင့် supplier records များကို စုစည်းထားပြီး purchasing workflow များအတွက် အလွယ်တကူ ပြန်ရှာနိုင်ပါသည်။",
+        features: ["Supplier records", "Contact tracking", "Procurement data"],
+      },
+      {
+        eyebrow: "Categories",
+        title: "Category Setup",
+        image: "/projects/pos/category.png",
+        icon: Tags,
+        description:
+          "Product များကို အုပ်စုခွဲစီမံနိုင်ရန် category configuration ကို အသုံးပြုထားပြီး sales screen နှင့် catalog browsing တွင် ရှာဖွေရလွယ်ကူစေပါသည်။",
+        features: ["Category records", "Product grouping", "Easy browsing"],
+      },
+      {
+        eyebrow: "Reports",
+        title: "Business Reports",
+        image: "/projects/pos/report.png",
+        icon: BarChart3,
+        description:
+          "ရောင်းအား၊ ဝင်ငွေ၊ transaction trend နှင့် operation performance များကို စစ်ဆေးနိုင်ရန် report screen ကို summary-focused layout ဖြင့် ပြသထားပါသည်။",
+        features: ["Sales summary", "Revenue insight", "Performance view"],
+      },
+      {
+        eyebrow: "History",
+        title: "Sale History",
+        image: "/projects/pos/sale-history.png",
+        icon: Database,
+        description:
+          "ပြီးခဲ့သည့် sale transaction များကို ပြန်လည်စစ်ဆေးနိုင်ရန် invoice/order records များကို table format ဖြင့် ဖော်ပြထားပြီး reconciliation အတွက် အသုံးပြုနိုင်ပါသည်။",
+        features: ["Transaction records", "Invoice lookup", "Audit support"],
+      },
+    ],
   },
 ];
 

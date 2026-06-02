@@ -54,6 +54,7 @@ export default async function ServiceDetailPage({
         title={project.title}
         tagline={project.heroTagline}
         meta={project.heroMeta}
+        thumbnail={project.thumbnail}
       />
       <ProjectDetailOverview
         title={project.overviewTitle}

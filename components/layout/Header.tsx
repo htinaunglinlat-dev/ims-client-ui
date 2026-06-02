@@ -8,6 +8,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { useSyncExternalStore } from "react";
+import { AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -92,17 +94,24 @@ export function Header() {
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="h-9 w-9 grid place-items-center rounded-lg border border-border hover:bg-accent transition-colors"
+            className="h-9 w-9 grid place-items-center rounded-lg border border-border hover:bg-accent transition-colors duration-300 overflow-hidden"
           >
-            {/* {mounted && resolvedTheme === "dark" ? ( */}
-            {mounted ? (
-              resolvedTheme === "dark" ? (
-                <Sun className="h-4 w-4" />
-              ) : (
-                <Moon className="h-4 w-4" />
-              )
-            ) : (
-              <span className="h-4 w-4"></span>
+            {mounted && (
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={resolvedTheme}
+                  initial={{ y: -12, opacity: 0, rotate: -90, scale: 0.6 }}
+                  animate={{ y: 0, opacity: 1, rotate: 0, scale: 1 }}
+                  exit={{ y: 12, opacity: 0, rotate: 90, scale: 0.6 }}
+                  transition={{ duration: 0.15, ease: "easeInOut" }}
+                >
+                  {resolvedTheme === "dark" ? (
+                    <Sun className="h-4 w-4" />
+                  ) : (
+                    <Moon className="h-4 w-4" />
+                  )}
+                </motion.div>
+              </AnimatePresence>
             )}
           </button>
           <Link href="/login" className="hidden sm:inline-flex">
