@@ -78,9 +78,9 @@ export function ProjectShowcaseCard({
               Key Features & Specifications:
             </p>
             <ul className="grid grid-cols-1 gap-2.5">
-              {project.overviewStats.map((stat) => (
+              {project.overviewStats.map((stat, idx) => (
                 <li
-                  key={stat.label}
+                  key={`${idx}-${stat.value}-${stat.label}`}
                   className="flex items-center gap-2.5 text-xs font-medium text-foreground/80"
                 >
                   <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />

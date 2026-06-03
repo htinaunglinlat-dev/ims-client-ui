@@ -11,8 +11,6 @@ import {
   Smartphone,
   ShoppingCart,
   Receipt,
-  BarChart3,
-  Tags,
   Activity,
   Bluetooth,
   Wifi,
@@ -20,6 +18,11 @@ import {
   Lightbulb,
   CheckCircle2,
   Cpu,
+  Tags,
+  BarChart3,
+  ThermometerSun,
+  CloudSun,
+  Presentation,
 } from "lucide-react";
 
 type ProjectOverviewStat = {
@@ -46,12 +49,12 @@ export type ServiceProjectDetail = {
 
 export const serviceProjectDetails: ServiceProjectDetail[] = [
   {
-    id: "ims",
+    id: "ims-app",
     title: "Inventory Management System",
     heroTagline: "Reimagining inventory control with a clean workflow.",
     heroMeta: "Web Dashboard",
     overviewTitle: "Reimagining inventory control",
-    thumbnail: "/projects/ims/thumbnail.png",
+    thumbnail: "/projects/ims-app/thumbnail.png",
     overviewDescription:
       "ဤစနစ်သည် Stock အရေအတွက်များ၊ ပို့ဆောင်မှုများ၊ ကုန်ပစ္စည်းများ၊ အမျိုးအစားများနှင့် ဂိုဒေါင်တာဝန်ပေးအပ်မှုများကို workflow တစ်ခုတည်းအတွင်း စုပေါင်းစီမံနိုင်အောင် ကူညီပေးပါသည်။",
     overviewStats: [
@@ -68,7 +71,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Authentication",
         title: "Login Experience",
-        image: "/projects/ims/auth_login.png",
+        image: "/projects/ims-app/auth_login.png",
         icon: Shield,
         description:
           "လုံခြုံစိတ်ချရသော အသုံးပြုခွင့်ရရှိရန် ရိုးရှင်းပြီး အာရုံစိုက်လွယ်သော sign-in flow ကို ဖန်တီးထားပါသည်။",
@@ -77,20 +80,16 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Inventory",
         title: "Inventory Management",
-        image: "/projects/ims/inventory_page.png",
+        image: "/projects/ims-app/inventory_page.png",
         icon: Database,
         description:
           "Stock အရေအတွက်များကို ထင်ရှားစွာ မြင်နိုင်ပြီး လျင်မြန်စွာ ထိန်းချုပ်နိုင်ရန် Inventory table ကို ဗဟိုပြု စီစဉ်ထားပါသည်။",
-        features: [
-          "Stock overview",
-          "Warehouse relation",
-          "Quantity tracking",
-        ],
+        features: ["Stock overview", "Warehouse relation", "Quantity tracking"],
       },
       {
         eyebrow: "Delivery",
         title: "Delivery Tracking",
-        image: "/projects/ims/delivery_page.png",
+        image: "/projects/ims-app/delivery_page.png",
         icon: Truck,
         description:
           "Shipment အခြေအနေနှင့် လုပ်ငန်းဆောင်ရွက်မှုများကို စစ်ဆေးနိုင်ရန် Delivery monitoring screen ကို ဖန်တီးထားပါသည်။",
@@ -99,7 +98,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Product",
         title: "Product Catalog",
-        image: "/projects/ims/product_page.png",
+        image: "/projects/ims-app/product_page.png",
         icon: Package,
         description:
           "ကုန်ပစ္စည်းအသေးစိတ်၊ အမျိုးအစားများနှင့် ထိန်းသိမ်းပြင်ဆင်မှုများကို စနစ်တကျ စီမံနိုင်ရန် Catalog screen ကို ဖန်တီးထားပါသည်။",
@@ -108,7 +107,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Warehouse",
         title: "Warehouse Control",
-        image: "/projects/ims/warhouse_page.png",
+        image: "/projects/ims-app/warhouse_page.png",
         icon: Home,
         description:
           "တည်နေရာအသေးစိတ်အချက်အလက်များကို ရှင်းလင်းစွာ မြင်နိုင်စေရန် Warehouse အဆင့်အလိုက် အချက်အလက်စီမံမှုကို ပြုလုပ်ထားပါသည်။",
@@ -117,7 +116,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "User Roles",
         title: "User Management",
-        image: "/projects/ims/user_page.png",
+        image: "/projects/ims-app/user_page.png",
         icon: Users,
         description:
           "အသုံးပြုသူများ၊ role တာဝန်ခွဲဝေမှုများနှင့် warehouse access များကို တစ်နေရာတည်းမှ စီမံနိုင်ပါသည်။",
@@ -126,7 +125,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Categories",
         title: "Product Categories",
-        image: "/projects/ims/product_category_page.png",
+        image: "/projects/ims-app/product_category_page.png",
         icon: Layers,
         description:
           "Catalog grouping များကို စနစ်တကျထားရှိပြီး ရှာဖွေရလွယ်ကူစေရန် Category configuration ကို ပြင်ဆင်ထားပါသည်။",
@@ -135,7 +134,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Units",
         title: "Product Units",
-        image: "/projects/ims/product_unit_page.png",
+        image: "/projects/ims-app/product_unit_page.png",
         icon: Scale,
         description:
           "Module များတစ်လျှောက် ကုန်ပစ္စည်းအရေအတွက်ကို တူညီမှန်ကန်စွာ ကိုင်တွယ်နိုင်ရန် Unit definition များကို သတ်မှတ်ထားပါသည်။",
@@ -146,7 +145,8 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
   {
     id: "chat-app",
     title: "Secure Chat Messaging App",
-    heroTagline: "Private messaging, group chat, and QR-based social workflows.",
+    heroTagline:
+      "Private messaging, group chat, and QR-based social workflows.",
     heroMeta: "Mobile App",
     overviewTitle: "Designing secure everyday communication",
     thumbnail: "/projects/chat-app/thumbnail.png",
@@ -238,13 +238,13 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
     ],
   },
   {
-    id: "iot",
+    id: "iot-app",
     title: "Smart IoT Device App",
     heroTagline:
       "QR onboarding, device pairing, and smart room control in one mobile app.",
     heroMeta: "Mobile App",
     overviewTitle: "Connecting smart devices with less setup friction",
-    thumbnail: "/projects/iot/thumbnail.png",
+    thumbnail: "/projects/iot-app/thumbnail.png",
     overviewDescription:
       "IoT app သည် smart device များကို QR code ဖြင့် လျင်မြန်စွာ ထည့်သွင်းနိုင်ရန်၊ Bluetooth နှင့် WiFi setup များကို အဆင့်လိုက် ပြုလုပ်နိုင်ရန်၊ room/device dashboard မှ energy usage နှင့် device status များကို mobile-first experience ဖြင့် စီမံနိုင်ရန် ဖန်တီးထားပါသည်။",
     overviewStats: [
@@ -261,7 +261,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Onboarding",
         title: "QR Device Onboarding",
-        image: "/projects/iot/home.png",
+        image: "/projects/iot-app/home.png",
         icon: QrCode,
         description:
           "Device အသစ်များကို one-time QR code ဖြင့် လျင်မြန်စွာ ထည့်သွင်းနိုင်ရန် app entry screen ကို ရိုးရှင်းပြီး action-focused ဖြစ်အောင် ဖန်တီးထားပါသည်။",
@@ -270,7 +270,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Register",
         title: "Account Registration",
-        image: "/projects/iot/register.png",
+        image: "/projects/iot-app/register.png",
         icon: Users,
         description:
           "Smart home device များကို ကိုယ်ပိုင် account ဖြင့် စီမံနိုင်ရန် email/password registration နှင့် Google sign-in option ပါဝင်သော onboarding screen ဖြစ်ပါသည်။",
@@ -279,7 +279,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Verification",
         title: "OTP Verification",
-        image: "/projects/iot/otp.png",
+        image: "/projects/iot-app/otp.png",
         icon: Shield,
         description:
           "Account activation ကို လုံခြုံစေရန် OTP code အတည်ပြုခြင်း၊ resend action နှင့် verify flow ကို mobile screen အတွင်း ထည့်သွင်းထားပါသည်။",
@@ -288,7 +288,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Dashboard",
         title: "Smart Room Dashboard",
-        image: "/projects/iot/dashboard.png",
+        image: "/projects/iot-app/dashboard.png",
         icon: Activity,
         description:
           "Energy usage summary, room category filter နှင့် smart space cards များကို dashboard တစ်ခုတည်းတွင် မြင်သာစွာ စီမံနိုင်ရန် တည်ဆောက်ထားပါသည်။",
@@ -297,7 +297,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Devices",
         title: "Device Discovery",
-        image: "/projects/iot/device.png",
+        image: "/projects/iot-app/device.png",
         icon: Cpu,
         description:
           "Bluetooth/WiFi mode ဖြင့် device များကို scan လုပ်ပြီး connection status နှင့် control action များကို list view ထဲတွင် တစ်ပြိုင်နက် စစ်ဆေးနိုင်ပါသည်။",
@@ -306,7 +306,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Pairing",
         title: "Bluetooth Connection",
-        image: "/projects/iot/user-journey-bluetooth.png",
+        image: "/projects/iot-app/user-journey-bluetooth.png",
         icon: Bluetooth,
         description:
           "IoT device နှင့် app ကြား local setup စတင်နိုင်ရန် Bluetooth connection အဆင့်ကို device context နှင့် progress indicator ပါဝင်အောင် ဖန်တီးထားပါသည်။",
@@ -315,7 +315,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Network",
         title: "WiFi Configuration",
-        image: "/projects/iot/user-journey-wifi.png",
+        image: "/projects/iot-app/user-journey-wifi.png",
         icon: Wifi,
         description:
           "Device ကို network ချိတ်ဆက်ရန် SSID နှင့် password ထည့်သွင်းပြီး WiFi setup progress ကို အဆင့်လိုက် ဆက်လက်လုပ်ဆောင်နိုင်ပါသည်။",
@@ -324,7 +324,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Control",
         title: "Device Control Panel",
-        image: "/projects/iot/device-detail.png",
+        image: "/projects/iot-app/device-detail.png",
         icon: Lightbulb,
         description:
           "Connected device များကို on/off control ပြုလုပ်နိုင်ပြီး temperature, humidity နှင့် smart appliance status များကို control panel မှ စောင့်ကြည့်နိုင်ပါသည်။",
@@ -333,7 +333,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Complete",
         title: "Scanned Device Summary",
-        image: "/projects/iot/user-journey-complete.png",
+        image: "/projects/iot-app/user-journey-complete.png",
         icon: CheckCircle2,
         description:
           "Bluetooth နှင့် WiFi setup ပြီးဆုံးပြီးနောက် detected device များကို summary view ဖြင့် ပြသကာ complete action မှတစ်ဆင့် control flow သို့ ပြန်လည်ဝင်နိုင်ပါသည်။",
@@ -344,10 +344,11 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
   {
     id: "pos",
     title: "Point of Sale System",
-    heroTagline: "Retail sales, checkout, inventory, and reporting in one dashboard.",
+    heroTagline:
+      "Retail sales, checkout, inventory, and reporting in one dashboard.",
     heroMeta: "Web Dashboard",
     overviewTitle: "Complete retail operations control",
-    thumbnail: "/projects/pos/thumbnail.png",
+    thumbnail: "/projects/pos-app/thumbnail.png",
     overviewDescription:
       "POS system သည် ဆိုင်ရောင်းချမှုများ၊ checkout process, product catalog, customer/supplier records, category setup နှင့် sales report များကို dashboard တစ်ခုတည်းအတွင်း စီမံနိုင်ရန် ဖန်တီးထားသော retail operation system ဖြစ်ပါသည်။",
     overviewStats: [
@@ -364,7 +365,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Sales",
         title: "Sales Dashboard",
-        image: "/projects/pos/sale.png",
+        image: "/projects/pos-app/sale.png",
         icon: ShoppingCart,
         description:
           "နေ့စဉ်ရောင်းချမှုများကို မြင်သာစွာ စစ်ဆေးနိုင်ပြီး item selection, cart summary နှင့် payment workflow များကို တစ်နေရာတည်းတွင် စီမံနိုင်သော sales screen ဖြစ်ပါသည်။",
@@ -373,7 +374,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Checkout",
         title: "Checkout Experience",
-        image: "/projects/pos/checkout.png",
+        image: "/projects/pos-app/checkout.png",
         icon: Receipt,
         description:
           "Customer order ကို အတည်ပြုခြင်း၊ subtotal/discount/tax တွက်ချက်ခြင်းနှင့် final payment အဆင့်ကို လျင်မြန်စွာ ဆောင်ရွက်နိုင်ရန် checkout interface ကို ဖန်တီးထားပါသည်။",
@@ -382,7 +383,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Products",
         title: "Product Management",
-        image: "/projects/pos/product.png",
+        image: "/projects/pos-app/product.png",
         icon: Package,
         description:
           "ရောင်းချမည့် product များ၏ name, price, category နှင့် stock-related information များကို စနစ်တကျ ထည့်သွင်းပြင်ဆင်နိုင်သော product catalog screen ဖြစ်ပါသည်။",
@@ -391,7 +392,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Customers",
         title: "Customer Records",
-        image: "/projects/pos/customer.png",
+        image: "/projects/pos-app/customer.png",
         icon: Users,
         description:
           "ဝယ်ယူသူအချက်အလက်များကို သိမ်းဆည်းပြီး sale history နှင့် customer relationship workflow များအတွက် ပြန်လည်အသုံးပြုနိုင်ရန် customer management ကို ထည့်သွင်းထားပါသည်။",
@@ -400,7 +401,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Suppliers",
         title: "Supplier Directory",
-        image: "/projects/pos/supplier.png",
+        image: "/projects/pos-app/supplier.png",
         icon: Truck,
         description:
           "ကုန်ပစ္စည်းပေးသွင်းသူများ၏ contact information နှင့် supplier records များကို စုစည်းထားပြီး purchasing workflow များအတွက် အလွယ်တကူ ပြန်ရှာနိုင်ပါသည်။",
@@ -409,7 +410,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Categories",
         title: "Category Setup",
-        image: "/projects/pos/category.png",
+        image: "/projects/pos-app/category.png",
         icon: Tags,
         description:
           "Product များကို အုပ်စုခွဲစီမံနိုင်ရန် category configuration ကို အသုံးပြုထားပြီး sales screen နှင့် catalog browsing တွင် ရှာဖွေရလွယ်ကူစေပါသည်။",
@@ -418,7 +419,7 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "Reports",
         title: "Business Reports",
-        image: "/projects/pos/report.png",
+        image: "/projects/pos-app/report.png",
         icon: BarChart3,
         description:
           "ရောင်းအား၊ ဝင်ငွေ၊ transaction trend နှင့် operation performance များကို စစ်ဆေးနိုင်ရန် report screen ကို summary-focused layout ဖြင့် ပြသထားပါသည်။",
@@ -427,11 +428,132 @@ export const serviceProjectDetails: ServiceProjectDetail[] = [
       {
         eyebrow: "History",
         title: "Sale History",
-        image: "/projects/pos/sale-history.png",
+        image: "/projects/pos-app/sale-history.png",
         icon: Database,
         description:
           "ပြီးခဲ့သည့် sale transaction များကို ပြန်လည်စစ်ဆေးနိုင်ရန် invoice/order records များကို table format ဖြင့် ဖော်ပြထားပြီး reconciliation အတွက် အသုံးပြုနိုင်ပါသည်။",
         features: ["Transaction records", "Invoice lookup", "Audit support"],
+      },
+    ],
+  },
+  {
+    id: "iot",
+    title: "Internet of Things",
+    heroTagline:
+      "Hardware prototypes for face detection, sensor monitoring, and connected device control.",
+    heroMeta: "IoT Hardware",
+    overviewTitle: "Building connected hardware prototypes",
+    thumbnail: "/projects/iot/thumbnail.png",
+    overviewDescription:
+      "IoT project သည် Raspberry Pi နှင့် ESP32-CAM ကို အသုံးပြုသော facial detection prototype နှင့် ESP8266, DHT22, BMP180 sensor များပါဝင်သော weather station prototype များကို တည်ဆောက်ထားပြီး hardware assembly, sensor data collection, device power setup နှင့် local monitoring workflow များကို လက်တွေ့စမ်းသပ်ထားသော project ဖြစ်ပါသည်။",
+    overviewStats: [
+      { value: "2", label: "Hardware Builds" },
+      { value: "5+", label: "Sensor Modules" },
+      { value: "ESP", label: "Microcontroller Stack" },
+      { value: "Pi", label: "Edge Processing" },
+    ],
+    showcaseTitle: "Internet of Things",
+    showcaseDescription:
+      "IoT project asset folder မှ facial detection hardware setup နှင့် weather station sensor system များကို hardware component များအပေါ် အခြေခံပြီး စုစည်းတင်ပြထားပါသည်။",
+    layout: "mobile",
+    showcaseItems: [
+      {
+        eyebrow: "Vision AI",
+        title: "Facial Detection System",
+        image: "/projects/iot/facial-detection-system.png",
+        icon: Cpu,
+        description:
+          "Raspberry Pi controller, ESP32-CAM camera module, OLED display, power adapter, USB/HDMI cables နှင့် custom enclosure များကို အသုံးပြုပြီး face detection အတွက် camera capture, local processing နှင့် device status display ကို စနစ်တကျ စမ်းသပ်တည်ဆောက်ထားသော IoT hardware prototype ဖြစ်ပါသည်။",
+        features: ["Raspberry Pi", "ESP32-CAM", "OLED status display"],
+      },
+      {
+        eyebrow: "Sensors",
+        title: "Weather Station System",
+        image: "/projects/iot/weather-station-system.png",
+        icon: CloudSun,
+        description:
+          "ESP8266 sensor board, DHT22 temperature/humidity sensor, BMP180 pressure sensor, relay, C945 transistor, resistors, diode, LED indicators, DC barrel power input နှင့် ESP32 display-based IoT hub ကို case များဖြင့် ခွဲတည်ဆောက်ထားပြီး weather data collection နှင့် hub display monitoring အတွက် ပြင်ဆင်ထားပါသည်။",
+        features: [
+          "ESP8266 sensor node",
+          "DHT22 and BMP180",
+          "ESP32 display hub",
+        ],
+      },
+    ],
+  },
+  {
+    id: "hydroponic",
+    title: "Smart Hydroponic System",
+    heroTagline:
+      "Automated soilless growing with sensor monitoring, lighting, and controlled water flow.",
+    heroMeta: "Hydroponics IoT",
+    overviewTitle: "Growing plants with connected automation",
+    thumbnail: "/projects/hydroponic/thumbnail.png",
+    overviewDescription:
+      "Hydroponic project သည် မြေမလိုသော စိုက်ပျိုးရေးစနစ်အတွက် PVC grow pipe structure, water circulation, grow lighting, sensor modules, Raspberry Pi based controller နှင့် monitoring display များကို ပေါင်းစပ်အသုံးပြုထားပြီး အပင်ကြီးထွားမှုအခြေအနေ၊ ရေစီးဆင်းမှုနှင့် environment data များကို စနစ်တကျ စောင့်ကြည့်ထိန်းချုပ်နိုင်ရန် တည်ဆောက်ထားပါသည်။",
+    overviewStats: [
+      { value: "4", label: "Captured Views" },
+      { value: "NFT", label: "Grow Pipe Structure" },
+      { value: "Pi", label: "Control Hardware" },
+      { value: "LED", label: "Grow Light Support" },
+    ],
+    showcaseTitle: "Smart Hydroponic System",
+    showcaseDescription:
+      "hydroponic project asset folder မှ greenhouse setup, plant rack, sensor hardware နှင့် smart monitoring control view များကို စုစည်းတင်ပြထားပါသည်။",
+    layout: "mobile",
+    showcaseItems: [
+      {
+        eyebrow: "Introduction",
+        title: "What is Hydroponic",
+        image: "/projects/hydroponic/introduction.png",
+        icon: Presentation,
+        description:
+          "Hydroponics (ရေဆင်းစိုက်ပျိုးနည်းစနစ်) ဆိုသည်မှာ မြေဆီလွှာကို လုံးဝအသုံးမပြုဘဲ အပင်အတွက် လိုအပ်သော အာဟာရဓာတ်များ ပျော်ဝင်နေသည့် ရေဖြင့်သာ တိုက်ရိုက်စိုက်ပျိုးသော ခေတ်မီနည်းစနစ်ဖြစ်ပါသည်။ ၎င်းစနစ်တွင် အပင်၏ အမြစ်များကို အာဟာရဖျော်ရည်နှင့် တိုက်ရိုက်ထိတွေ့စေပြီး အခန်းတွင်းစိုက်ပျိုးမှုများအတွက် နေရောင်ခြည်အစားထိုး LED မီးများဖြင့် အလင်းပေး စိုက်ပျိုးနိုင်ပါသည်။",
+        features: [
+          "Soilless Cultivation",
+          "Nutrient Solution Circulation",
+          "LED Grow Light Integration",
+        ],
+      },
+      {
+        eyebrow: "Greenhouse",
+        title: "Hydroponic Grow House",
+        image: "/projects/hydroponic/greenhouse-hydroponic.png",
+        icon: Home,
+        description:
+          "Greenhouse အတွင်း PVC pipe rows များကို NFT-style hydroponic channel အဖြစ် တည်ဆောက်ထားပြီး water circulation ဖြင့် leafy vegetable များကို soil-less growing environment ထဲတွင် စနစ်တကျ စိုက်ပျိုးနိုင်ရန် ပြင်ဆင်ထားပါသည်။",
+        features: [
+          "PVC grow channels",
+          "Water circulation",
+          "Greenhouse setup",
+        ],
+      },
+      {
+        eyebrow: "Plant Rack",
+        title: "Plants Shelter",
+        image: "/projects/hydroponic/plants-shelter.png",
+        icon: Lightbulb,
+        description:
+          "Multi-level plant shelter တွင် lettuce နှင့် leafy greens များကို pipe channel များအပေါ် စိုက်ပျိုးထားပြီး grow light, pump wiring, power controls နှင့် support frame များဖြင့် indoor/outdoor controlled growing ကို စမ်းသပ်ထားပါသည်။",
+        features: ["Layered plant rack", "Grow light support", "Pump wiring"],
+      },
+      {
+        eyebrow: "Sensors",
+        title: "Sensor Hardware",
+        image: "/projects/hydroponic/sensors.png",
+        icon: ThermometerSun,
+        description:
+          "Raspberry Pi controller, sensor modules, relay/power board, LCD display နှင့် wiring harness များကို grow pipe အနီးတွင် တပ်ဆင်ထားပြီး temperature, moisture, water flow သို့မဟုတ် nutrient-related monitoring data များကို local hardware မှ စုဆောင်းထိန်းချုပ်နိုင်ရန် တည်ဆောက်ထားပါသည်။",
+        features: ["Raspberry Pi control", "Sensor modules", "LCD feedback"],
+      },
+      {
+        eyebrow: "Monitoring",
+        title: "Smart Control Monitoring",
+        image: "/projects/hydroponic/smart-control-monitoring.png",
+        icon: Activity,
+        description:
+          "Hydroponic rack အပေါ် camera/monitoring hardware နှင့် display screen များကို အသုံးပြုပြီး plant health view, system logs, light condition နှင့် device status များကို real-time စောင့်ကြည့်နိုင်ရန် smart monitoring setup အဖြစ် ပြင်ဆင်ထားပါသည်။",
+        features: ["Plant health view", "System logs", "Device monitoring"],
       },
     ],
   },
