@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { serviceProjectDetails } from "@/lib/data/project-detail-data";
 import { ProjectShowcaseCard } from "./ProjectShowcaseCard";
 
@@ -22,11 +21,7 @@ export function ProjectShowcaseSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {serviceProjectDetails.map((project, index) => (
-          <ProjectShowcaseCard
-            key={project.id}
-            project={project}
-            index={index}
-          />
+          <ProjectShowcaseCard project={project} index={index} />
         ))}
       </div>
     </section>

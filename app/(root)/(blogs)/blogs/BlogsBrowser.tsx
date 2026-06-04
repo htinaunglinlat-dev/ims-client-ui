@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 
 import { BlogCard } from "@/components/Card/BlogCard";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -83,7 +82,11 @@ export function BlogsBrowser({ blogs }: BlogsBrowserProps) {
                         layoutId="active-category-bg"
                         className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 rounded-full"
                         style={{ zIndex: 0 }}
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 380,
+                          damping: 30,
+                        }}
                       />
                     )}
                     <span className="relative z-10">{item}</span>

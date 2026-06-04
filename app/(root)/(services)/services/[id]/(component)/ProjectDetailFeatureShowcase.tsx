@@ -34,13 +34,24 @@ export function ProjectDetailFeatureShowcase({
 
         <div className="space-y-8">
           {items.map((item, index) => (
+            // <motion.div
+            //   initial={{ opacity: 0, y: 50, filter: "blur(8px)" }}
+            //   whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            //   viewport={{ once: true, amount: 0.2 }}
+            //   transition={{
+            //     duration: 0.7,
+            //     delay: index * 0.1,
+            //     ease: [0.22, 1, 0.36, 1],
+            //   }}
+            // >
             <ProjectDetailShowcaseCard
-              key={item.eyebrow}
+              key={`${item.eyebrow}-${index}`}
               item={item}
               index={index}
               total={items.length}
               layout={layout}
             />
+            // </motion.div>
           ))}
           {items.length === 0 ? (
             <p className="rounded-xl border border-border bg-card p-6 text-sm text-muted-foreground">

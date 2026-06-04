@@ -21,14 +21,6 @@ export type Service = {
   image_url: string;
 };
 
-import BlogImage_1 from "@/public/blogs/blog_1.png";
-import BlogImage_2 from "@/public/blogs/blog_2.png";
-import BlogImage_3 from "@/public/blogs/blog_3.png";
-import BlogImage_4 from "@/public/blogs/blog_4.png";
-import BlogImage_5 from "@/public/blogs/blog_5.png";
-import BlogImage_6 from "@/public/blogs/blog_6.png";
-import { StaticImageData } from "next/image";
-
 export const services: Service[] = [
   {
     slug: "mobile",
@@ -94,105 +86,6 @@ export const services: Service[] = [
     gradient: "from-amber-500 to-orange-600",
     image_url:
       "https://supremeconceptsinc.com/wp-content/uploads/2025/11/shutterstock_2438190465-scaled.jpg",
-  },
-];
-
-export type Blog = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  author: string;
-  authorRole: string;
-  date: string;
-  category: string;
-  readingTime: string;
-  cover: string | StaticImageData;
-  views: number;
-};
-
-// const cover = (seed: string, hue: number) =>
-//   `data:image/svg+xml;utf8,${encodeURIComponent(
-//     `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='hsl(${hue},80%,60%)'/><stop offset='1' stop-color='hsl(${(hue + 50) % 360},80%,45%)'/></linearGradient><radialGradient id='r' cx='0.3' cy='0.3'><stop offset='0' stop-color='white' stop-opacity='0.35'/><stop offset='1' stop-color='white' stop-opacity='0'/></radialGradient></defs><rect width='800' height='500' fill='url(#g)'/><rect width='800' height='500' fill='url(#r)'/><text x='40' y='460' font-family='Inter,sans-serif' font-size='18' fill='white' fill-opacity='0.6'>${seed}</text></svg>`,
-//   )}`;
-
-export const blogs: Blog[] = [
-  {
-    slug: "future-of-aiot-2026",
-    title: "The Future of AIoT: Where AI Meets the Physical World",
-    excerpt:
-      "On-device AI is reshaping IoT. Here's how edge intelligence is unlocking a new class of products in 2026.",
-    author: "Aisha Khan",
-    authorRole: "Head of AI",
-    date: "May 12, 2026",
-    category: "AI",
-    readingTime: "8 min read",
-    cover: BlogImage_1,
-    views: 4280,
-  },
-  {
-    slug: "react-server-components-deep-dive",
-    title: "React Server Components: A Practical Deep Dive",
-    excerpt:
-      "RSC changes the mental model of React. We unpack streaming, suspense, and what it means for your stack.",
-    author: "Daniel Rivera",
-    authorRole: "Principal Engineer",
-    date: "May 4, 2026",
-    category: "Web",
-    readingTime: "12 min read",
-    cover: BlogImage_2,
-    views: 3120,
-  },
-  {
-    slug: "scaling-react-native-teams",
-    title: "Scaling React Native Across 40 Engineers",
-    excerpt:
-      "Lessons from a year of monorepo, modular architecture, and OTA rollouts in production.",
-    author: "Mei Lin",
-    authorRole: "Mobile Lead",
-    date: "Apr 28, 2026",
-    category: "Mobile",
-    readingTime: "10 min read",
-    cover: BlogImage_3,
-    views: 2890,
-  },
-  {
-    slug: "edge-llms-production",
-    title: "Running LLMs at the Edge: Production Lessons",
-    excerpt:
-      "Quantization, KV-cache tricks, and how we shipped a 7B model inside a factory gateway.",
-    author: "Aisha Khan",
-    authorRole: "Head of AI",
-    date: "Apr 18, 2026",
-    category: "AI",
-    readingTime: "9 min read",
-    cover: BlogImage_4,
-    views: 5310,
-  },
-  {
-    slug: "designing-for-trust",
-    title: "Designing Software People Actually Trust",
-    excerpt:
-      "Trust is a design problem. Microcopy, motion, and defaults that build confidence.",
-    author: "Sara Ahmed",
-    authorRole: "Design Director",
-    date: "Apr 10, 2026",
-    category: "Design",
-    readingTime: "6 min read",
-    cover: BlogImage_5,
-    views: 1980,
-  },
-  {
-    slug: "iot-fleet-observability",
-    title: "Observability for 100k Connected Devices",
-    excerpt:
-      "How we built a telemetry pipeline that doesn't fall over under real-world chaos.",
-    author: "Omar Yusuf",
-    authorRole: "IoT Architect",
-    date: "Apr 1, 2026",
-    category: "IoT",
-    readingTime: "11 min read",
-    cover: BlogImage_6,
-    views: 2410,
   },
 ];
 

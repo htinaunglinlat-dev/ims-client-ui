@@ -5,11 +5,11 @@ import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
 const knnImagePages = [
-  { src: "/blogs/knn/image_1.png", width: 1175, height: 985 },
-  { src: "/blogs/knn/image_2.png", width: 1450, height: 2048 },
-  { src: "/blogs/knn/image_3.png", width: 1450, height: 2048 },
-  { src: "/blogs/knn/image_4.png", width: 1450, height: 2048 },
-  { src: "/blogs/knn/image_5.png", width: 1450, height: 2048 },
+  { src: "/blogs/blog-1/image_1.png", width: 1175, height: 985 },
+  { src: "/blogs/blog-1/image_2.png", width: 1450, height: 2048 },
+  { src: "/blogs/blog-1/image_3.png", width: 1450, height: 2048 },
+  { src: "/blogs/blog-1/image_4.png", width: 1450, height: 2048 },
+  { src: "/blogs/blog-1/image_5.png", width: 1450, height: 2048 },
 ];
 
 type BlogImagePagesProps = {
