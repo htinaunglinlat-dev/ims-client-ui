@@ -2,6 +2,27 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* If using CodeBlockLowlight, add language token colors */
+.hljs-keyword { color: #ff79c6; font-weight: bold; }
+.hljs-string  { color: #f1fa8c; }
+.hljs-comment { color: #6272a4; font-style: italic; }
+.hljs-function{ color: #50fa7b; }
+
+/* Ensure Tiptap inline styles override the Tailwind typography plugin */
+.prose span[style] {
+  color: unset !important;
+  font-size: unset !important;
+  font-family: unset !important;
+  line-height: unset !important;
+}
+
+/* Fix nested elements like bold or italics resetting the parent inline color */
+.prose span[style] strong,
+.prose span[style] b,
+.prose span[style] em {
+  color: inherit !important;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -144,6 +165,41 @@
 
   html {
     @apply font-mono;
+  }
+}
+
+@layer components {
+  .prose-blog pre {
+    margin: 1.75rem 0;
+    max-width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: oklch(0.18 0 0);
+    padding: 1rem;
+    color: oklch(0.96 0 0);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  .prose-blog pre code {
+    display: block;
+    min-width: max-content;
+    background: transparent;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    white-space: pre;
+  }
+
+  .prose-blog :not(pre) > code {
+    border-radius: var(--radius-sm);
+    background: var(--muted);
+    padding: 0.15rem 0.35rem;
+    color: var(--foreground);
+    font-family: var(--font-mono);
+    font-size: 0.9em;
   }
 }
 

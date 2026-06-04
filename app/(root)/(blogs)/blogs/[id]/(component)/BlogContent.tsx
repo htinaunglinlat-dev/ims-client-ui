@@ -2,6 +2,7 @@
 
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+import { TextStyleKit } from "@tiptap/extension-text-style";
 
 type BlogContentProps = {
   content: string;
@@ -11,7 +12,7 @@ type BlogContentProps = {
 // ============================================================================
 export function BlogContent({ content }: BlogContentProps) {
   const editor = useEditor({
-    extensions: [StarterKit],
+    extensions: [StarterKit, TextStyleKit],
     content,
     editable: false,
     immediatelyRender: false,
