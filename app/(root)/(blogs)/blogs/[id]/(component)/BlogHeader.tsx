@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Calendar, Clock } from "lucide-react";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
 
 import type { Blog } from "@/lib/data/blog-data";
 import { ShareActions } from "@/app/(root)/(blogs)/blogs/[id]/(component)/BlogInteractions";
@@ -15,8 +15,9 @@ export function BlogHeader({ blog }: BlogHeaderProps) {
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <Link
           href="/blogs"
-          className="text-sm text-muted-foreground hover:text-foreground"
+          className="group inline-flex items-center text-sm font-semibold text-muted-foreground transition hover:text-foreground/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
+          <ArrowLeft className="mr-0 h-4 w-0 opacity-0 transition-all duration-200 group-hover:mr-2 group-hover:w-4 group-hover:opacity-100 group-focus-visible:mr-2 group-focus-visible:w-4 group-focus-visible:opacity-100" />
           Back to blog
         </Link>
 

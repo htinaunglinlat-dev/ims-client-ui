@@ -9,6 +9,7 @@ import {
   Users,
   Calendar,
   Code,
+  Leaf,
 } from "lucide-react";
 
 export type Service = {
@@ -30,8 +31,7 @@ export const services: Service[] = [
       "We craft fast, beautiful iOS and Android apps using React Native, Swift, and Kotlin — from MVPs to production-grade platforms.",
     icon: Smartphone,
     gradient: "from-blue-500 to-indigo-600",
-    image_url:
-      "https://www.addevice.io/storage/ckeditor/uploads/images/65f840d316353_mobile.app.development.1920.1080.png",
+    image_url: "/services/mobile-app-development.png",
   },
   {
     slug: "web",
@@ -41,8 +41,7 @@ export const services: Service[] = [
       "Full-stack web platforms built with React, Next.js, and edge infrastructure. Pixel-perfect design, fast as light.",
     icon: Globe,
     gradient: "from-indigo-500 to-purple-600",
-    image_url:
-      "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/10/Website-Development.jpg",
+    image_url: "/services/website-development.png",
   },
   {
     slug: "iot",
@@ -52,8 +51,7 @@ export const services: Service[] = [
       "Industrial-grade IoT — sensors, gateways, dashboards — combined with on-device AI for predictive intelligence.",
     icon: Cpu,
     gradient: "from-cyan-500 to-blue-600",
-    image_url:
-      "https://media.geeksforgeeks.org/wp-content/uploads/20240410174620/How-to-become-IOT-Developer.webp",
+    image_url: "/services/iot&aiot.png",
   },
   {
     slug: "ai",
@@ -63,7 +61,7 @@ export const services: Service[] = [
       "From RAG chatbots to computer vision systems — we ship production AI that delivers measurable business value.",
     icon: Brain,
     gradient: "from-violet-500 to-fuchsia-600",
-    image_url: "https://www.zoondia.com/wp-content/uploads/2025/05/image.jpeg",
+    image_url: "/services/ai-powered-system.png",
   },
   {
     slug: "training",
@@ -73,8 +71,7 @@ export const services: Service[] = [
       "Hands-on training in Web, Mobile, AI, and IoT. We've trained 2,500+ engineers across universities and enterprises.",
     icon: GraduationCap,
     gradient: "from-emerald-500 to-teal-600",
-    image_url:
-      "https://online.maryville.edu/wp-content/uploads/sites/97/2021/04/whiteboard-training.jpg",
+    image_url: "/services/teaching&training.png",
   },
   {
     slug: "consulting",
@@ -87,14 +84,24 @@ export const services: Service[] = [
     image_url:
       "https://supremeconceptsinc.com/wp-content/uploads/2025/11/shutterstock_2438190465-scaled.jpg",
   },
+  {
+    slug: "hydroponics",
+    title: "Smart Hydroponics",
+    short: "Automated climate, dosing, and yield optimization.",
+    description:
+      "We help modern farms implement automated nutrient dosing, IoT sensor monitoring, and climate control strategies to maximize crop yield and operational efficiency.",
+    icon: Leaf,
+    gradient: "from-emerald-500 to-teal-600",
+    image_url: "/services/greenhouse-hydroponic.png",
+  },
 ];
 
 export const stats = [
   { label: "Students Trained", value: 2500, suffix: "+", icon: GraduationCap },
-  { label: "Completed Projects", value: 320, suffix: "+", icon: Briefcase },
+  { label: "Completed Projects", value: 30, suffix: "+", icon: Briefcase },
   { label: "Active Clients", value: 48, suffix: "", icon: Users },
-  { label: "Years of Experience", value: 11, suffix: "", icon: Calendar },
-  { label: "Technologies Used", value: 60, suffix: "+", icon: Code },
+  { label: "Years of Experience", value: 13, suffix: "", icon: Calendar },
+  { label: "Technologies Used", value: 30, suffix: "+", icon: Code },
 ];
 
 export const testimonials = [

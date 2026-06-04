@@ -8,7 +8,7 @@ export function BlogCard({ blog }: { blog: Blog }) {
   return (
     <Link
       href={`/blogs/${encodeURIComponent(blog.slug)}`}
-      className="group flex flex-col rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-glow transition-all"
+      className="group flex flex-col rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-glow transition-all h-full"
     >
       <div className="aspect-16/10 overflow-hidden">
         <Image
@@ -32,10 +32,10 @@ export function BlogCard({ blog }: { blog: Blog }) {
         <h3 className="mt-4 text-lg font-semibold leading-snug group-hover:text-primary transition-colors line-clamp-2">
           {blog.title}
         </h3>
-        <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
+        <p className="mt-2 text-sm text-muted-foreground line-clamp-2 leading-loose py-1">
           {blog.excerpt}
         </p>
-        <div className="mt-5 pt-4 border-t border-border flex items-center gap-3 text-xs text-muted-foreground">
+        <div className="pt-4 border-t border-border flex items-center gap-3 text-xs text-muted-foreground mt-auto">
           <div className="h-8 w-8 rounded-full bg-blue-400 grid place-items-center text-primary-foreground text-xs font-semibold">
             {blog.author
               .split(" ")

@@ -70,7 +70,7 @@ export function StatsSection() {
                 duration: 0.5,
                 ease: "easeOut",
               }}
-              className="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-border shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden relative hover:rounded-md hover:scale-105"
+              className="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-border shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden relative hover:scale-105"
             >
               {/* Background icon watermark */}
               <div className="absolute top-0 right-0 p-4 opacity-15 group-hover:opacity-20 transition-opacity">
